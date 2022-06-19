@@ -47,6 +47,8 @@ const NewUser = () => {
     // arr.push(values);
     localStorage.setItem("data", JSON.stringify(arr));
     console.log(arr);
+    event.target.reset();
+    setValues("");
   };
 
   useEffect(() => {
