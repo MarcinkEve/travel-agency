@@ -6,11 +6,11 @@ import Data from "../Data/Data";
 import Modal from "../Modal/Modal";
 
 const GENDER = ["Female", "Male", "Other"];
-const CATEGORIES = ["Italy", "Spain", "Greece", "Turkey"];
-const SUBCATEGORIES = ["By plain", "By bus"];
-const SUBSUBCATEGORIES = ["5d/4n", "8d/7n", "12d/11n"];
-// const SUBCATEGORIES = ["Direction", "Stars", "Duration"];
-// const SUBSUBCATEGORIES2 = [3, 4, 5];
+const DIRECTION = ["Italy", "Spain", "Greece", "Turkey"];
+const TRANSPORT = ["By plain", "By bus"];
+const DURATION = ["5d/4n", "8d/7n", "12d/11n"];
+// const TRANSPORT = ["Direction", "Stars", "Duration"];
+// const DURATION2 = [3, 4, 5];
 
 const NewUser = () => {
   // const [valuesList, setValuesList] = useState([]);
@@ -24,9 +24,9 @@ const NewUser = () => {
     passw: "",
     age: "",
     gender: "",
-    category: "",
-    subCategory: "",
-    subSubCategory: "",
+    direction: "",
+    transport: "",
+    duration: "",
   });
 
   const set = (name) => {
@@ -176,15 +176,15 @@ const NewUser = () => {
           </div>
           <div>
             <label>Category</label>
-            <select value={values.category} onChange={set("category")} required>
+            <select value={values.direction} onChange={set("direction")} required>
               <option value="">Choose...</option>
-              {CATEGORIES.map((c) => (
+              {DIRECTION.map((c) => (
                 <option key={c}>{c}</option>
               ))}
             </select>
 
-            {/* <select value={category} onChange={newCategory}>
-              <option value="category">Choose...</option>
+            {/* <select value={direction} onChange={newdirection}>
+              <option value="direction">Choose...</option>
               <option value="plain">By plain</option>
               <option value="bus">By bus</option>
               <option value="ship">By ship</option>
@@ -195,12 +195,12 @@ const NewUser = () => {
           <div>
             <label>Sub-Category</label>
             <select
-              value={values.subCategory}
-              onChange={set("subCategory")}
+              value={values.transport}
+              onChange={set("transport")}
               required
             >
               <option value="">Choose...</option>
-              {SUBCATEGORIES.map((c) => (
+              {TRANSPORT.map((c) => (
                 <option key={c}>{c}</option>
               ))}
             </select>
@@ -210,12 +210,12 @@ const NewUser = () => {
           <div>
             <label>SUb-SUb-Category</label>
             <select
-              value={values.subSubCategory}
-              onChange={set("subSubCategory")}
+              value={values.duration}
+              onChange={set("duration")}
               required
             >
               <option value="">Choose...</option>
-              {SUBSUBCATEGORIES.map((c) => (
+              {DURATION.map((c) => (
                 <option key={c}>{c}</option>
               ))}
             </select>
