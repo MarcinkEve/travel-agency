@@ -43,10 +43,10 @@ const Nav = () => {
             <p>New Category</p>
           </Link>
         </li>
-        <li onClick={() => setDrop((prev) => !prev)} ref={ref}>
+        <li onClick={() => setDrop((prev) => !prev)}>
           Categories
         </li>
-        <li className={`dropdown ${drop ? "show" : ""}`}>
+        <li className={`dropdown ${drop ? "show" : ""}`}  ref={ref}>
           {categItems.map((menu, i) => {
             return (
               <Link to="/categoryInfo" key={i}>
