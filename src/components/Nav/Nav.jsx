@@ -43,7 +43,7 @@ const Nav = () => {
             <p>New Category</p>
           </Link>
         </li>
-        <li onClick={() => setDrop((prev) => !prev)}>
+        <li style={{width: "fit-content"}} onClick={() => setDrop((prev) => !prev)}>
           Categories
         </li>
         <li className={`dropdown ${drop ? "show" : ""}`} ref={ref}>
