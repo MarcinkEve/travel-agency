@@ -26,7 +26,7 @@ const Nav = () => {
           </Link>
         </li>
         <li onClick={() => setDrop((prev) => !prev)} >Categories</li>
-        <li className="menus" className={`dropdown ${drop ? "show" : ""}`}>
+        <li className={`dropdown ${drop ? "show" : ""}`}>
           {categItems.map((menu, i) => {
             return (
               <Link to="/categoryInfo" key={i}>
