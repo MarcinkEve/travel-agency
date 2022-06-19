@@ -2,15 +2,15 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "./newUser.css";
 import { Link } from "react-router-dom";
-import Data from "../Data";
-import Modal from "../Modal";
+import Data from "../Data/Data";
+import Modal from "../Modal/Modal";
 
 const GENDER = ["Female", "Male", "Other"];
-const CATEGORIES = ["By plain", "By bus", "By ship"];
-const SUBCATEGORIES = ["Direction", "Stars", "Duration"];
-const SUBSUBCATEGORIES1 = ["Italy", "Spain", "Greece", "Turkey"];
-const SUBSUBCATEGORIES2 = [3, 4, 5];
-const SUBSUBCATEGORIES3 = ["5d/4n", "8d/7n", "12d/11n"];
+const CATEGORIES = ["Italy", "Spain", "Greece", "Turkey"];
+const SUBCATEGORIES = ["By plain", "By bus"];
+const SUBSUBCATEGORIES = ["5d/4n", "8d/7n", "12d/11n"];
+// const SUBCATEGORIES = ["Direction", "Stars", "Duration"];
+// const SUBSUBCATEGORIES2 = [3, 4, 5];
 
 const NewUser = () => {
   // const [valuesList, setValuesList] = useState([]);
@@ -53,8 +53,10 @@ const NewUser = () => {
     if (isSubmit) {
       console.log(values);
     }
-  }, [isSubmit]);
+  }, [isSubmit, values]);
 
+  //////////////////////////////
+  //  =========== Show users list ===========
   const [usdata, setDataLS] = useState("");
 
   const getData = () => {
@@ -66,44 +68,16 @@ const NewUser = () => {
   };
 
   //////////////////////
-
+  //  =========== Show modal ===========
   const [insert, setInsert] = useState(0);
 
   const insertCreate = (donIsert) => {
     setInsert(donIsert);
     getData();
   };
+
   /////////////////////////
-
-  // const saveFormData = async () => {
-  //   const response = await fetch("http://localhost:5500/registration", {
-  //     method: "POST",
-  //     body: JSON.stringify(values),
-  //   });
-  //   console.log("response", response)
-  //   if (response.status !== 200) {
-  //     throw new Error(`Request failed: ${response.status}`);
-  //   }
-  // };
-
-  // const onSubmit = async (event) => {
-  //   event.preventDefault();
-  //   try {
-  //     await saveFormData();
-  //     alert("Your registration was successfully submitted!");
-  //     setValues({
-  //       firstName: "",
-  //       lastName: "",
-  //       email: "",
-  //       passw: "",
-  //       age: "",
-  //       gender: "",
-  //       category: "",
-  //     });
-  //   } catch (e) {
-  //     alert(`Registration failed! ${e.message}`);
-  //   }
-  // };
+  //  =========== Inputs validation ===========
 
   const validation = (val) => {
     const errors = {};
@@ -115,92 +89,13 @@ const NewUser = () => {
       errors.password = "Seems that password is too long";
     }
   };
-  // const getValuesOnSubmit = () => {};
-  ////////////////////////////////////////////////
-  // const [valuesList, setValuesList] = useState([]);
-  // const [firstName, setFirstName] = useState("");
-  // const [lastName, setLastName] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
-  // const [age, setAge] = useState("");
-  // const [gender, setGender] = useState("");
-  // const [category, setCategory] = useState("");
-  // const [error, setError] = useState({});
-
-  // const newName = (event) => {
-  //   console.log(event.target.value);
-  //   setFirstName(event.target.value);
-  // };
-  // const newLastName = (event) => {
-  //   console.log(event.target.value);
-  //   setLastName(event.target.value);
-  // };
-  // const newMail = (event) => {
-  //   console.log(event.target.value);
-  //   setEmail(event.target.value);
-  // };
-  // const newPassw = (event) => {
-  //   console.log(event.target.value);
-  //   setPassword(event.target.value);
-  // };
-  // const newAge = (event) => {
-  //   console.log(event.target.value);
-  //   setAge(event.target.value);
-  // };
-  // const newGender = (event) => {
-  //   console.log(event.target.value);
-  //   setGender(event.target.value);
-  // };
-  // const newCategory = (event) => {
-  //   console.log(event.target.value);
-  //   setCategory(event.target.value);
-  // };
-
-  // const addValues = (event) => {
-  //   event.preventDefault();
-  //   console.log(valuesList);
-  //   setValuesList((val) => [
-  //     ...val,
-  //     {
-  //       firstName: firstName,
-  //       lastName: lastName,
-  //       email: email,
-  //       passw: password,
-  //       age: age,
-  //       gender: gender,
-  //       category: category,
-  //     },
-  //   ]);
-  //   console.log(valuesList);
-  //   setFirstName("");
-  //   setLastName("");
-  //   setEmail("");
-  //   setPassword("");
-  //   setAge("");
-  //   setGender("");
-  //   setCategory("");
-  // };
-
-  // const valuesValidation = (values) => {
-  //   const errors = {};
-  //   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-
-  //   // firstname
-  //   if (!values.firstName) {
-  //     errors.firstName = "* Username is required";
-  //   }
-  // };
 
   ///////////////////////////////////////////////////
   return (
     <>
       <div>
         {insert ? (
-          <Modal
-            usdata={usdata}
-            insert={insert}
-            setInsert={setInsert}
-          ></Modal>
+          <Modal usdata={usdata} insert={insert} setInsert={setInsert}></Modal>
         ) : null}
       </div>
       <div>
@@ -295,8 +190,38 @@ const NewUser = () => {
             {/* <p className="error-message">{error.firstName}</p> */}
           </div>
 
+          <div>
+            <label>Sub-Category</label>
+            <select
+              value={values.subCategory}
+              onChange={set("subCategory")}
+              required
+            >
+              <option value="">Choose...</option>
+              {SUBCATEGORIES.map((c) => (
+                <option key={c}>{c}</option>
+              ))}
+            </select>
+            {/* <p className="error-message">{error.firstName}</p> */}
+          </div>
+
+          <div>
+            <label>SUb-SUb-Category</label>
+            <select
+              value={values.subSubCategory}
+              onChange={set("subSubCategory")}
+              required
+            >
+              <option value="">Choose...</option>
+              {SUBSUBCATEGORIES.map((c) => (
+                <option key={c}>{c}</option>
+              ))}
+            </select>
+            {/* <p className="error-message">{error.firstName}</p> */}
+          </div>
+
           {/* <button type="submit" onClick={getValuesOnSubmit}> */}
-          <button type="submit">Prideti reiksme</button>
+          <button type="submit">Add user</button>
         </form>
 
         {/* <Link to="/data" onClick={getData} usdata={usdata}>
