@@ -1,5 +1,5 @@
 import React from "react";
-import "./nav.css";
+import "./nav.scss";
 import { Link } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import { categItems } from "../categItems.js";
@@ -26,25 +26,25 @@ const Nav = () => {
   }, [drop]);
 
   return (
-    <div>
-      <ul>
+    <div className="nav-container">
+      <ul className="nav__ul">
         {/* <li>
           <Link to="/welcome">
             <p>Home</p>
           </Link>
         </li> */}
-        <li>
-          <Link to="/newUser">
-            <p>New User</p>
-          </Link>
-        </li>
-        <li>
+        <li className="nav__ul__li">
           <Link to="/newCategory">
-            <p>New Category</p>
+            <p className="nav__ul__li--title">Create Category</p>
+          </Link>
+        </li >
+        <li className="nav__ul__li">
+          <Link to="/newUser">
+            <p className="nav__ul__li--title">Create User</p>
           </Link>
         </li>
-        <li style={{width: "fit-content"}} onClick={() => setDrop((prev) => !prev)}>
-          Categories
+        <li className="nav__ul__li" onClick={() => setDrop((prev) => !prev)}>
+          Categories list
         </li>
         <li className={`dropdown ${drop ? "show" : ""}`} ref={ref}>
           {categItems.map((menu, i) => {
