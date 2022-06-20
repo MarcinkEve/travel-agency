@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import "./App.css";
+import "./App.scss";
 import Layout from "./components/Layout/Layout";
 import Welcome from "./components/Welcome/Welcome";
 import NewUser from "./components/NewUser/NewUser";
@@ -11,15 +11,17 @@ import CategoryInfo from "./components/CategoryInfo/CategoryInfo";
 function App() {
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          {/* <Route path="/welcome" element={<Welcome />} /> */}
-          <Route path="/newUser" element={<NewUser />} />
-          <Route path="/newCategory" element={<NewCategory />} />
-          <Route path="/categories" element={<Categories />} />
-          <Route path="/categoryInfo" element={<CategoryInfo />} />
-        </Route>
-      </Routes>
+      <div className="main-container">
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            {/* <Route path="/welcome" element={<Welcome />} /> */}
+            <Route path="/newUser" element={<NewUser />} />
+            <Route path="/newCategory" element={<NewCategory />} />
+            <Route path="/categories" element={<Categories />} />
+            <Route path="/categoryInfo" element={<CategoryInfo />} />
+          </Route>
+        </Routes>
+      </div>
     </>
   );
 }
