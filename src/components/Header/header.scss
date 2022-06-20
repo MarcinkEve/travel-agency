@@ -1,6 +1,29 @@
 @import "../../assets/variables.scss";
 
-.header-title {
-  background-color: $bg-color-1;
-  padding: 1rem;
+.header {
+  background-image: url(https://part.lt/img/c48728a54a9bd63bd7936d3653c14a30779.jpg);
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  &__title {
+    background-size: cover;
+    // background-color: $bg-color-1;
+    padding: 1rem;
+    font-family: $fontPermanentMarker;
+    font-size: 3.5rem;
+  }
+  &__title--svg {
+    width: 5rem;
+    height: 5rem;
+    padding: 0 2rem;
+    cursor: pointer;
+  }
+  &__title--svg:hover {
+    transition: transform 2s;
+    transform: rotate(360deg);
+  }
+  &__title--svg:active {
+    transition: transform 0.5s;
+    transform: scale(0.7);
+  }
 }

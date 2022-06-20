@@ -1,8 +1,13 @@
 @import "../../assets/variables.scss";
 
 .footer {
-  background-color: $bg-color-1;
-  padding: 0.5rem;
+  background-image: url(https://part.lt/img/22c85ef2a071fb2c49848bde10627f56360.jpg);
+  background-size: cover;
+  // background-color: $bg-color-1;
   text-align: right;
   font-size: 0.8rem;
+  padding: 1rem;
+  font-family: $fontPermanentMarker;
+}
+.footer__title {
 }

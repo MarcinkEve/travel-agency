@@ -51,7 +51,7 @@ const NewUser = () => {
 
   useEffect(() => {
     if (isSubmit) {
-      console.log(values);
+      console.log("val", values);
     }
   }, [isSubmit, values]);
 
@@ -93,7 +93,8 @@ const NewUser = () => {
   ///////////////////////////////////////////////////
   return (
     <>
-      <div>
+  
+      <div style={{backgroundImage: "url(https://part.lt/img/c48728a54a9bd63bd7936d3653c14a30779.jpg)"}}>
         {insert ? (
           <Modal usdata={usdata} insert={insert} setInsert={setInsert}></Modal>
         ) : null}
@@ -142,7 +143,7 @@ const NewUser = () => {
               onChange={set("passw")}
               required
             ></input>
-            <p className="error-message">{error.firstName}</p>
+            {/* <p className="error-message">{error.passw}</p> */}
           </div>
           <div>
             <label>Age</label>
@@ -173,8 +174,12 @@ const NewUser = () => {
             {/* <p className="error-message">{error.firstName}</p> */}
           </div>
           <div>
-            <label>Category</label>
-            <select value={values.direction} onChange={set("direction")} required>
+            <label>Direction</label>
+            <select
+              value={values.direction}
+              onChange={set("direction")}
+              required
+            >
               <option value="">Choose...</option>
               {DIRECTION.map((c) => (
                 <option key={c}>{c}</option>
@@ -191,7 +196,7 @@ const NewUser = () => {
           </div>
 
           <div>
-            <label>Sub-Category</label>
+            <label>Transport</label>
             <select
               value={values.transport}
               onChange={set("transport")}
@@ -206,12 +211,8 @@ const NewUser = () => {
           </div>
 
           <div>
-            <label>SUb-SUb-Category</label>
-            <select
-              value={values.duration}
-              onChange={set("duration")}
-              required
-            >
+            <label>Duration</label>
+            <select value={values.duration} onChange={set("duration")} required>
               <option value="">Choose...</option>
               {DURATION.map((c) => (
                 <option key={c}>{c}</option>
@@ -236,7 +237,7 @@ const NewUser = () => {
           type="button"
           className="button header-button"
         >
-          Get data
+          Show users list
         </button>
 
         {/* <a href="_blank" onClick={getData}>getData</a> */}
