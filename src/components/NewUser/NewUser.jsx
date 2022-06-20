@@ -1,8 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import "./newUser.css";
-import { Link } from "react-router-dom";
-import Data from "../Data/Data";
 import Modal from "../Modal/Modal";
 
 const GENDER = ["Female", "Male", "Other"];
@@ -144,7 +142,7 @@ const NewUser = () => {
               onChange={set("passw")}
               required
             ></input>
-            {/* <p className="error-message">{error.firstName}</p> */}
+            <p className="error-message">{error.firstName}</p>
           </div>
           <div>
             <label>Age</label>
