@@ -1,15 +1,15 @@
 import React from "react";
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const CategoryInfo = () => {
   const [item, setItem] = useState([]);
-  const [itemor, setItemor] = useState([]);
+  const [itemCopy, setItemCopy] = useState([]);
 
   const get = () => {
     const items = JSON.parse(localStorage.getItem("data"));
     console.log("firstname", items[0].firstName);
     console.log("item", item);
-    console.log("itemorgggg", itemor);
+    console.log("itemCopy", itemCopy);
     filter()
   };
 
@@ -17,14 +17,14 @@ const CategoryInfo = () => {
     const items = JSON.parse(localStorage.getItem("data"));
     if (items) {
       setItem(items);
-      setItemor(item);
+      setItemCopy(item);
       console.log("useeffect", items);
     }
   }, []);
 
   const filter = () => {
-    itemor.map((el, i) =>
-      el.direction === "Spain" ? console.log("YESS value", el.firstName) : setItem(item)
+    itemCopy.map((el, i) =>
+      el.direction === "Spain" ? console.log("YESS value", el.firstName) : console.log("NO value", el.firstName)
     );
   };
 
