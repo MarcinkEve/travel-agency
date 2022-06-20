@@ -13,7 +13,7 @@ const NewCategory = () => {
     duration: "",
   });
 
-  const handleAddFormChange = (event) => {
+  const inputChange = (event) => {
     event.preventDefault();
     const fieldName = event.target.getAttribute("name");
     const fieldValue = event.target.value;
@@ -22,7 +22,7 @@ const NewCategory = () => {
     setInputValue(newFormData);
   };
 
-  const handleAddFormSubmit = (event) => {
+  const onSubmit = (event) => {
     event.preventDefault();
     const newContact = {
       direction: inputValue.direction,
@@ -63,13 +63,13 @@ const NewCategory = () => {
   return (
     <div>
       <div>
-        <form onSubmit={handleAddFormSubmit}>
+        <form onSubmit={onSubmit}>
           <div>
             <div>
               <label>
                 <h3>Direction</h3>
               </label>
-              <select name="direction" onClick={handleAddFormChange}>
+              <select name="direction" onClick={inputChange}>
                 <option value="Choose">Choose...</option>
                 <option value={DIRECTION[0]}>{DIRECTION[0]}</option>
                 <option value={DIRECTION[1]}>{DIRECTION[1]}</option>
@@ -81,7 +81,7 @@ const NewCategory = () => {
               <label>
                 <h3>Transport</h3>
               </label>
-              <select name="transport" onClick={handleAddFormChange}>
+              <select name="transport" onClick={inputChange}>
                 <option value="Choose">Choose...</option>
                 <option value={TRANSPORT[0]}>{TRANSPORT[0]}</option>
                 <option value={TRANSPORT[1]}>{TRANSPORT[1]}</option>
@@ -91,7 +91,7 @@ const NewCategory = () => {
               <label>
                 <h3>Duration</h3>
               </label>
-              <select name="duration" onClick={handleAddFormChange}>
+              <select name="duration" onClick={inputChange}>
                 <option value="Choose">Choose...</option>
                 <option value={DURATION[0]}>{DURATION[0]}</option>
                 <option value={DURATION[1]}>{DURATION[1]}</option>
