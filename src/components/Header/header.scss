@@ -5,16 +5,11 @@
   background-size: cover;
   display: flex;
   align-items: center;
-  &__title {
-    background-size: cover;
-    // background-color: $bg-color-1;
-    padding: 1rem;
-    font-family: $fontPermanentMarker;
-    font-size: 3.5rem;
+  &__logo {
     &--svg {
       width: 5rem;
       height: 5rem;
-      padding: 0 2rem;
+      padding: 0 3rem;
       cursor: pointer;
     }
     &--svg:hover {
@@ -25,19 +20,43 @@
       transition: transform 0.5s;
       transform: scale(0.7);
     }
+    &--hamburger {
+      display: none;
+    }
+  }
+  &__title {
+    background-size: cover;
+    // background-color: $bg-color-1;
+    padding: 1rem 3rem;
+    font-family: $fontPermanentMarker;
+    font-size: 3.5rem;
   }
 }
 
-@media screen and (max-width: 756px) {
+@media screen and (max-width:576px) {
   .header {
-    &__title {
-      font-size: 2rem;
+    &__logo {
+      display: flex;
+      flex-direction: column;
       &--svg {
         width: 3rem;
         height: 3rem;
-      padding: 0 1rem;
-
+        padding: 0.5rem 1rem 0;
       }
+      &--hamburger {
+        display: block;
+        height: 1.5rem;
+        width: 5rem;
+        padding-bottom: 0.5rem;
+        fill: gray;
+        // margin: 0.5rem 0 0 1rem;
+      }
+      &--hamburger:active {
+        fill: rgb(132,219,255);
+      }
+    }
+    &__title {
+      font-size: 2rem;
     }
   }
 }
