@@ -1,19 +1,25 @@
 import React from "react";
 
-const Dropdown = ({ submenus, dropdown }) => {
+const Dropdown = ({ submenus, dropdown, isNavExpanded, setIsNavExpanded }) => {
   return (
     <ul className={`dropdown ${dropdown ? "show" : ""}`}>
       {submenus.map((submenu, index) => (
-        <li onClick={() => console.log("submeniu-", submenu.title)} key={index} className="menu-items" >
+        <li
+          onClick={() => {
+            setIsNavExpanded(!isNavExpanded);
+          }}
+          key={index}
+          className="menu-items"
+        >
           <a href="/#">{submenu.title}</a>
         </li>
       ))}
     </ul>
-//     <ul className={`dropdown ${dropdownClass} ${dropdown ? "show" : ""}`}>
-//     {submenus.map((submenu, index) => (
-//      <Categories depthLevel={depthLevel} items={submenu} key={index} />
-//     ))}
-//    </ul>
+    //     <ul className={`dropdown ${dropdownClass} ${dropdown ? "show" : ""}`}>
+    //     {submenus.map((submenu, index) => (
+    //      <Categories depthLevel={depthLevel} items={submenu} key={index} />
+    //     ))}
+    //    </ul>
   );
 };
 
