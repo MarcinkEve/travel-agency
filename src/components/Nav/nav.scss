@@ -73,9 +73,6 @@
   color: $color-1;
   font-weight: bold;
 }
-.menu-items button:hover {
-  width: 100%;
-}
 .menu-items a:hover,
 .menu-items button:hover {
   background-color: $color-4;
@@ -83,6 +80,11 @@
   border-radius: 0.5rem;
   transition: all 0.5s;
   transform: scale(1.05);
+  margin: 0 1rem;
+  width: calc(100% - 2rem);
+}
+.menu-items a:hover {
+  width: calc(100% - 8rem);
 }
 
 .arrow::after {
@@ -154,11 +156,13 @@
     padding: 0.5rem 4.5rem;
     margin: auto;
     width: fit-content;
+    transition: all 1s;
   }
   .menu-items button:hover {
     padding: 0.5rem 0;
     margin: 0 1rem;
     width: calc(100% - 2rem);
+    transition: all 1s;
   }
 }
 
@@ -178,5 +182,6 @@
   }
   .menu-items a:hover {
     width: fit-content;
+    transition: all 1s;
   }
 }
