@@ -1,16 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import "./header.scss";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({isNavExpanded, setIsNavExpanded}) => {
+
   return (
     <>
       <div className="header">
-        <Link to="/">
-          <svg className="header__title--svg">
-            <use xlinkHref="#logo"></use>
-          </svg>
-        </Link>
+        <div className="header__logo">
+          <Link to="/">
+            <svg className="header__logo--svg">
+              <use xlinkHref="#logo"></use>
+            </svg>
+          </Link>
+            <svg className="header__logo--hamburger" onClick={() => {
+              setIsNavExpanded(!isNavExpanded);
+              // console.log("labas")
+            }}>
+              <use xlinkHref="#hamburger"></use>
+            </svg>
+          {/* <button
+            className="header__logo--hamburger"
+            onClick={() => {
+              setIsNavExpanded(!isNavExpanded);
+            }}
+          >
+            MENU
+          </button> */}
+        </div>
         <p className="header__title"> Travellers</p>
       </div>
     </>
