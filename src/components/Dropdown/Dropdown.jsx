@@ -3,7 +3,7 @@ import "./dropdown.scss";
 
 const Dropdown = ({ submenus, dropdown, isNavExpanded, setIsNavExpanded }) => {
   return (
-    <div className="dropdow__container">
+    <div className="dropdown__container">
       <ul className={`dropdown ${dropdown ? "show" : ""}`}>
         {submenus.map((submenu, index) => (
           <li
