@@ -5,23 +5,30 @@
   padding: 0;
 }
 
-.nav-container {
-  padding-top: 1rem;
+.nav-container,
+.nav-container-expanded {
+  background-color: $color-3;
+  padding: 1rem 0.5rem;
 }
+
 .nav__ul {
   &__li {
-    width: 100%;
-    padding: 0.5rem 1.5rem;
+    width: 90%;
+    padding: 0.5rem;
+    margin: 0.5rem;
     list-style-type: none;
     color: $color-1;
     margin: 0;
+    font-family: $fontKalam;
+    font-size: 20px;
     &--title {
       color: $color-1;
       margin: 0;
+      min-width: 7rem;
     }
   }
   &__li:hover {
-    background-color: $bg-color-2;
+    background-color: $color-2;
     margin: 0;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     border-radius: 0.5rem;
@@ -33,6 +40,22 @@
   }
 }
 
+@media screen and (max-width: 576px) {
+  .nav-container {
+    display: none;
+  }
+  .nav-container-expanded {
+    display: block;
+  }
+  .nav__ul__li {
+    width: calc(100% - 6rem);
+    text-align: left;
+    margin: auto;
+    padding: 0.1rem;
+    font-size: 20px;
+  }
+}
+
 .menus {
   display: flex;
   flex-direction: column;
@@ -41,7 +64,7 @@
 
 .menu-items {
   position: relative;
-  font-size: 14px;
+  font-size: 20px;
 }
 
 .menu-items a {
@@ -58,16 +81,29 @@
   background-color: transparent;
   cursor: pointer;
   width: fit-content;
+  font-family: $fontKalam;
 }
-
-.menu-items a,
+.menu-items a {
+  padding: 0.2rem 0 0.5rem 3rem;
+  color: $color-1;
+  font-family: $fontKalam;
+}
 .menu-items button {
-  text-align: left;
-  padding: 0.7rem 1rem;
+  text-align: center;
+  padding: 0.5rem 2rem;
+  color: $color-1;
+  font-weight: bold;
 }
-
-.menu-items a:hover {
-  background-color: #f2f2f2;
+.menu-items button:hover {
+  width: 100%;
+}
+.menu-items a:hover,
+.menu-items button:hover {
+  background-color: $color-4;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  transition: all 0.5s;
+  transform: scale(1.05);
 }
 
 .arrow::after {
@@ -82,23 +118,27 @@
 
 .dropdown {
   position: relative;
-  right: 0;
-  left: auto;
-  box-shadow: 0 10px 15px -3px rgba(46, 41, 51, 0.08),
+  left: 0;
+  margin: 0;
+   box-shadow: 0 10px 15px -3px rgba(46, 41, 51, 0.08),
     0 4px 6px -2px rgba(71, 63, 79, 0.16);
-  font-size: 0.875rem;
+  font-size: 1rem;
   z-index: 9999;
   min-width: 10rem;
   padding: 0.5rem 0;
   list-style: none;
-  background-color: #fff;
+  background-color: $color-2;
   border-radius: 0.5rem;
   display: none;
 }
 
 .dropdown.show {
-  width: fit-content;
+  width: 10rem;
   display: block;
+  margin: 0;
+
+  // position:relative;
+  // left: 1rem;
 }
 
 .dropdown .dropdown-submenu {

@@ -5,7 +5,7 @@ import { useState, useRef, useEffect } from "react";
 import { categItems } from "../categItems.js";
 import Categories from "../Categories/Categories";
 
-const Nav = () => {
+const Nav = ({ isNavExpanded, setIsNavExpanded }) => {
   const [drop, setDrop] = useState(false);
 
   let ref = useRef();
@@ -26,19 +26,29 @@ const Nav = () => {
   }, [drop]);
 
   return (
-    <div className="nav-container">
+    <div className={isNavExpanded ? "nav-container-expanded" : "nav-container"}>
       <ul className="nav__ul">
         {/* <li>
           <Link to="/welcome">
             <p>Home</p>
           </Link>
         </li> */}
-        <li className="nav__ul__li">
+        <li
+          className="nav__ul__li"
+          onClick={() => {
+            setIsNavExpanded(!isNavExpanded);
+          }}
+        >
           <Link to="/newCategory">
             <p className="nav__ul__li--title">Create Category</p>
           </Link>
-        </li >
-        <li className="nav__ul__li">
+        </li>
+        <li
+          className="nav__ul__li"
+          onClick={() => {
+            setIsNavExpanded(!isNavExpanded);
+          }}
+        >
           <Link to="/newUser">
             <p className="nav__ul__li--title">Create User</p>
           </Link>
@@ -51,7 +61,12 @@ const Nav = () => {
             return (
               <Link to="/categoryInfo" key={i}>
                 {" "}
-                <Categories menu={menu} key={i} />
+                <Categories
+                  isNavExpanded={isNavExpanded}
+                  setIsNavExpanded={setIsNavExpanded}
+                  menu={menu}
+                  key={i}
+                />
               </Link>
             );
           })}
