@@ -8,7 +8,7 @@
 .nav-container,
 .nav-container-expanded {
   background-color: $color-3;
-  padding: 1rem 0.5rem;
+  padding: 1rem 2rem;
 }
 
 .nav__ul {
@@ -20,11 +20,11 @@
     color: $color-1;
     margin: 0;
     font-family: $fontKalam;
-    font-size: 20px;
+    font-size: 25px;
     &--title {
       color: $color-1;
       margin: 0;
-      min-width: 7rem;
+      min-width: 10rem;
     }
   }
   &__li:hover {
@@ -74,6 +74,11 @@
   text-decoration: none;
 }
 
+.menu-items a {
+  padding: 0.2rem 0 0.5rem 6rem;
+  color: $color-1;
+  font-family: $fontKalam;
+}
 .menu-items button {
   color: inherit;
   font-size: inherit;
@@ -82,15 +87,8 @@
   cursor: pointer;
   width: fit-content;
   font-family: $fontKalam;
-}
-.menu-items a {
-  padding: 0.2rem 0 0.5rem 3rem;
-  color: $color-1;
-  font-family: $fontKalam;
-}
-.menu-items button {
   text-align: center;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 3rem;
   color: $color-1;
   font-weight: bold;
 }
@@ -124,7 +122,8 @@
     0 4px 6px -2px rgba(71, 63, 79, 0.16);
   font-size: 1rem;
   z-index: 9999;
-  min-width: 10rem;
+  width:10rem;
+  min-width: 12rem;
   padding: 0.5rem 0;
   list-style: none;
   background-color: $color-2;
@@ -133,7 +132,7 @@
 }
 
 .dropdown.show {
-  width: 10rem;
+  width: 15rem;
   display: block;
   margin: 0;
 
