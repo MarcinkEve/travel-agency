@@ -18,11 +18,6 @@ const Dropdown = ({ submenus, dropdown, isNavExpanded, setIsNavExpanded }) => {
         ))}
       </ul>
     </div>
-    //     <ul className={`dropdown ${dropdownClass} ${dropdown ? "show" : ""}`}>
-    //     {submenus.map((submenu, index) => (
-    //      <Categories depthLevel={depthLevel} items={submenu} key={index} />
-    //     ))}
-    //    </ul>
   );
 };
 
