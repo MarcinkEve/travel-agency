@@ -1,0 +1,77 @@
+@import "../../assets/variables.scss";
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.form-container {
+  font-family: $fontKalam;
+  font-size: 25px;
+  padding: 1rem 2rem;
+  &--title {
+    text-decoration: underline;
+  }
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  min-width: fit-content;
+  padding: 2rem 4rem 2rem 0;
+  row-gap: 2rem;
+  &__content {
+    &__input {
+      display: flex;
+      flex-direction: column;
+      padding: 0.5rem 2rem 0.5rem 0;
+      &--select {
+        border: 1px solid $color-5a;
+        border-radius: 5px;
+        padding: 0.5rem;
+        font-size: 18px;
+        font-family: $fontKalam;
+      }
+    }
+  }
+  &__submitButton {
+    background-color: $color-2;
+    font-family: $fontKalam;
+    padding: 0.2rem;
+    border-radius: 5px;
+    font-size: 25px;
+    margin-right: 2rem;
+  }
+  &__submitButton:hover {
+    background-color: $color-3;
+    border: 1px solid $color-5a;
+    transition: all 0.3s;
+    transform: scale(0.97);
+  }
+}
+.table-container {
+  font-family: $fontKalam;
+  padding: 1rem 2rem;
+  margin: 0 5rem;
+  &--title {
+    font-size: 37px;
+    text-decoration: underline;
+  }
+}
+.table {
+  padding: 1rem 0;
+  &__body {
+    border-bottom: 1px solid $color-5a;
+    &__heading {
+      border-bottom: 1px solid $color-5a;
+      text-align: left;
+      padding: 0 1.5rem 0 0;
+
+    }
+    &__data {
+      border-bottom: 1px solid $color-5a;
+
+      // text-align: left;
+      // padding: 0 2rem 0 0;
+    }
+  }
+}

@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "./newUser.css";
 import Modal from "../Modal/Modal";
+import { getFromLocal } from "../../utils/utils";
 
 const GENDER = ["Female", "Male", "Other"];
 const DIRECTION = ["Italy", "Spain", "Greece", "Turkey"];
@@ -40,7 +41,7 @@ const NewUser = () => {
     setError(validation(values));
     setIsSubmit(true);
 
-    arr = JSON.parse(localStorage.getItem("data", values)) || [];
+    arr = getFromLocal("data", values);
     arr.push(values);
     // arr.push(values);
     localStorage.setItem("data", JSON.stringify(arr));

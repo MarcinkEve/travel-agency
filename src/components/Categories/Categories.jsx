@@ -35,6 +35,7 @@ const Categories = ({ menu, isNavExpanded, setIsNavExpanded }) => {
             {menu.title}{" "}
           </button>
           <Dropdown
+            category={menu.title}
             submenus={menu.submenu}
             dropdown={dropdown}
             isNavExpanded={isNavExpanded}

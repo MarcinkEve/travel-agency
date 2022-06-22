@@ -1,37 +1,39 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { getFromLocal } from "../../utils/utils"
 
-const CategoryInfo = () => {
+const CategoryInfo = ({ category = "direction", value = "Spain" }) => {
   const [item, setItem] = useState([]);
-  const [itemCopy, setItemCopy] = useState([]);
 
-  const get = () => {
-    const items = JSON.parse(localStorage.getItem("data"));
-    console.log("firstname", items[0].firstName);
-    console.log("item", item);
-    console.log("itemCopy", itemCopy);
-    filter()
-  };
+  const { search } = useLocation();
+
+  const query = useMemo(
+    () => Object.fromEntries(new URLSearchParams(search)),
+    [search]
+  );
 
   useEffect(() => {
-    const items = JSON.parse(localStorage.getItem("data"));
+    const items = getFromLocal("data");
     if (items) {
-      setItem(items);
-      setItemCopy(item);
-      console.log("useeffect", items);
+      if(Object.keys(query).length){
+        const filtering = items.filter((el, i) => {
+          const key = Object.keys(query)[0];
+          const prop = query[key];
+          console.log(value[prop]);
+          console.log(el[key?.toLowerCase()])
+          return el[key?.toLowerCase()] === prop;
+        });
+        console.log(filtering.length);
+        setItem(filtering);
+      }
     }
-  }, []);
-
-  const filter = () => {
-    itemCopy.map((el, i) =>
-      el.direction === "Spain" ? console.log("YESS value", el.firstName) : console.log("NO value", el.firstName)
-    );
-  };
+  }, [JSON.stringify(query)]);
 
   return (
     <>
       <div style={{ background: "red" }}>CategoryInfo</div>
-      <button onClick={get}>getgetgetget</button>
+      <button>getgetgetget</button>
       <div>
         {item.map((el, i) => (
           <div key={i}>

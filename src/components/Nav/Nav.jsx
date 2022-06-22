@@ -62,6 +62,7 @@ const Nav = ({ isNavExpanded, setIsNavExpanded }) => {
               <Link to="/categoryInfo" key={i}>
                 {" "}
                 <Categories
+                  categItems={categItems}
                   isNavExpanded={isNavExpanded}
                   setIsNavExpanded={setIsNavExpanded}
                   menu={menu}
