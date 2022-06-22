@@ -54,6 +54,16 @@ const NewUser = () => {
       console.log("val", values);
     }
   }, [isSubmit, values]);
+  ///////////////////////////////
+  const handleSaveToPC = (jsonData) => {
+    const fileData = JSON.stringify(jsonData);
+    const blob = new Blob([fileData], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.download = "filename.txt";
+    link.href = url;
+    link.click();
+  };
 
   //////////////////////////////
   //  =========== Show users list ===========
@@ -63,8 +73,12 @@ const NewUser = () => {
     let data = JSON.parse(localStorage.getItem("data"));
     console.log(data);
     setDataLS(JSON.stringify(data, null, 4));
-    // return JSON.stringify(localStorage.getItem('data'));
-    // setDataLS(JSON.stringify(data));
+  };
+
+  //////////////////////
+  //  =========== Download list ===========
+  const downloadData = () => {
+    handleSaveToPC(JSON.parse(localStorage.getItem("data"), null, 4));
   };
 
   //////////////////////
@@ -93,8 +107,12 @@ const NewUser = () => {
   ///////////////////////////////////////////////////
   return (
     <>
-  
-      <div style={{backgroundImage: "url(https://part.lt/img/c48728a54a9bd63bd7936d3653c14a30779.jpg)"}}>
+      <div
+        style={{
+          backgroundImage:
+            "url(https://part.lt/img/c48728a54a9bd63bd7936d3653c14a30779.jpg)",
+        }}
+      >
         {insert ? (
           <Modal usdata={usdata} insert={insert} setInsert={setInsert}></Modal>
         ) : null}
@@ -221,23 +239,23 @@ const NewUser = () => {
             {/* <p className="error-message">{error.firstName}</p> */}
           </div>
 
-          {/* <button type="submit" onClick={getValuesOnSubmit}> */}
           <button type="submit">Add user</button>
         </form>
 
-        {/* <Link to="/data" onClick={getData} usdata={usdata}>
-            <p>getData{usdata}</p>
-          </Link> */}
-        {/* <pre onClick={getData}>
-          DATA
-          {usdata}
-        </pre> */}
         <button
           onClick={insertCreate}
           type="button"
           className="button header-button"
         >
           Show users list
+        </button>
+
+        <button
+          onClick={downloadData}
+          type="button"
+          className="button header-button"
+        >
+          Download list
         </button>
 
         {/* <a href="_blank" onClick={getData}>getData</a> */}
