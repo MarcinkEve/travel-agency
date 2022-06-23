@@ -1,0 +1,43 @@
+@import "../../assets/variables.scss";
+
+.categoryInfo-wrapper {
+  padding: 0 1rem 4rem;
+}
+.categoryInfo--title {
+  font-family: $fontKalam;
+  font-size: 25px;
+  text-decoration: underline;
+  padding: 1rem 2rem;
+}
+.categoryInfo__table__body {
+  font-family: $fontKalam;
+  font-size: 20px;
+  &__heading,
+  &__data {
+    border-bottom: 1px solid $color-5a;
+    text-align: left;
+    padding: 0 3rem 0 0;
+    margin: 1rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .categoryInfo__table__body {
+    font-size: 15px;
+    &__heading,
+    &__data {
+      padding: 0 1.5rem 0 0;
+      margin: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .categoryInfo__table__body {
+    &__heading,
+    &__data {
+      padding: 0 1rem 0 0;
+      margin: 1rem;
+    }
+  }
+}
