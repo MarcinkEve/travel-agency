@@ -145,12 +145,12 @@ const NewCategory = () => {
             </tr>
           </thead>
           <tbody>
-            {data.map((contact, i) => (
+            {data.map((cat, i) => (
               <tr key={i} className="table__body">
                 <td className="table__body__data">{++i}</td>
-                <td className="table__body__data">{contact.direction}</td>
-                <td className="table__body__data">{contact.transport}</td>
-                <td className="table__body__data">{contact.duration}</td>
+                <td className="table__body__data">{cat.direction}</td>
+                <td className="table__body__data">{cat.transport}</td>
+                <td className="table__body__data">{cat.duration}</td>
               </tr>
             ))}
           </tbody>
