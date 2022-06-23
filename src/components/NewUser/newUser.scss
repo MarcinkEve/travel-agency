@@ -1,11 +1,136 @@
-pre {
-  background-color: rgb(243, 243, 104);
-  display: block;
-  font-family: monospace;
-  white-space: pre;
-  margin: 1em 0px;
-  padding: 1em 0px;
-  word-wrap: break-word;
-  white-space: break-spaces;
-  /* white-space: pre-wrap; */
+@import "../../assets/variables.scss";
+
+.user-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-family: $fontKalam;
+  font-size: 25px;
+  padding: 1rem 2rem;
+  margin-right: 5rem;
+}
+.user-form__container__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  &--title {
+    text-decoration: underline;
+    padding: 0 2rem;
+  }
+  &--buttons {
+    &-button {
+      font-family: $fontKalam;
+      background-color: $color-2;
+      border-radius: 5px;
+      font-size: 20px;
+      padding: 0.5rem 1rem;
+      margin: 0 1rem;
+    }
+    &-button:hover {
+      background-color: $color-3;
+      border: 1px solid $color-5a;
+      transition: all 0.3s;
+      transform: scale(0.97);
+    }
+  }
+}
+
+.user-form {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  font-size: 25px;
+  padding: 1rem 2rem;
+  &__side {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+  }
+  &__input {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 2rem 0.5rem 0;
+    &--field,
+    &--select {
+      border: 1px solid $color-5a;
+      border-radius: 5px;
+      padding: 0.5rem;
+      font-size: 20px;
+      font-family: $fontKalam;
+    }
+  }
+  &__submitButton {
+    background-color: $color-2;
+    font-family: $fontKalam;
+    padding: 0.2rem;
+    border-radius: 5px;
+    font-size: 25px;
+    margin: 3rem 2rem 0 0;
+  }
+  &__submitButton:hover {
+    background-color: $color-3;
+    border: 1px solid $color-5a;
+    transition: all 0.3s;
+    transform: scale(0.97);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .user-container {
+    width: 90%;
+  }
+  .user-form__container__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .user-form {
+    // width: 90%;
+    margin: auto;
+    &__side {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+    }
+    &__input {
+      padding-left: 2rem;
+    }
+    &__submitButton {
+      margin-left: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .user-container {
+    width: 70%;
+  }
+  .user-form__container__header {
+    &--title {
+      font-size: 23px;
+    }
+    &--buttons {
+      &-button {
+        font-size: 18px;
+        padding: 0.2rem 1rem;
+        margin: 0 0.2rem;
+      }
+    }
+  }
+  .user-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    &__side {
+      width: 100%;
+    }
+    &__input {
+      padding-left: 0;
+    }
+    &__submitButton {
+      margin-left: 0;
+
+    }
+  }
 }
