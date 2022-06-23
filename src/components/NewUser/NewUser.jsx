@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import "./newUser.css";
+import "./newUser.scss";
 import Modal from "../Modal/Modal";
 import { getFromLocal, setFromLocal } from "../../utils/utils";
 
