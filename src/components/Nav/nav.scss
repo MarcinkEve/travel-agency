@@ -9,6 +9,7 @@
 .nav-container-expanded {
   background-color: $color-3;
   padding: 1rem 2rem;
+  height: 100vh;
 }
 
 .nav__ul {
@@ -129,9 +130,23 @@
   top: -7px;
 }
 
+@media screen and (max-width: 1024px) {
+  .nav-container {
+    display: none;
+    // width:0%;
+    z-index: 999;
+
+  }
+  .nav-container-expanded {
+    display: block;
+    z-index: 999;
+  }
+}
+
 @media screen and (max-width: 992px) {
   .nav-container {
     display: none;
+    // width:0%;
   }
   .nav-container-expanded {
     display: block;

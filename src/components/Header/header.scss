@@ -33,7 +33,17 @@
   }
 }
 
-@media screen and (max-width:992px) {
+@media screen and (max-width: 1024px) {
+  .header__logo--hamburger {
+    display: block;
+    height: 1.5rem;
+    width: 5rem;
+    padding-bottom: 0.5rem;
+    fill: $color-5;
+  }
+}
+
+@media screen and (max-width: 992px) {
   .header {
     &__logo {
       display: flex;
@@ -52,7 +62,7 @@
         // margin: 0.5rem 0 0 1rem;
       }
       &--hamburger:active {
-        fill: rgb(132,219,255);
+        fill: rgb(132, 219, 255);
       }
     }
     &__title {
@@ -60,7 +70,7 @@
     }
   }
 }
-@media screen and (max-width:576px) {
+@media screen and (max-width: 576px) {
   .header {
     &__logo {
       display: flex;
@@ -79,11 +89,12 @@
         // margin: 0.5rem 0 0 1rem;
       }
       &--hamburger:active {
-        fill: rgb(132,219,255);
+        fill: rgb(132, 219, 255);
       }
     }
     &__title {
       font-size: 2rem;
+      padding: 0.8rem;
     }
   }
 }
