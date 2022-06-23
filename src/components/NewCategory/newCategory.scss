@@ -65,13 +65,98 @@
       border-bottom: 1px solid $color-5a;
       text-align: left;
       padding: 0 1.5rem 0 0;
-
     }
     &__data {
       border-bottom: 1px solid $color-5a;
 
       // text-align: left;
       // padding: 0 2rem 0 0;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0 2rem;
+  }
+  .form {
+    width: 100%;
+  }
+  .table-container {
+    margin: 0 1rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin: auto;
+  }
+  .form-container {
+    font-size: 20px;
+    padding: 1rem;
+    &--title {
+      padding: 0 2rem;
+    }
+  }
+  .form {
+    padding: 1.5rem 2rem;
+    &__content__input--label {
+      font-size: 25px;
+    }
+    &content__input--select > option {
+      width: fit-content;
+    }
+  }
+  .table-container {
+    padding: 1rem;
+    margin: 0 2rem;
+    &--title {
+      font-size: 30px;
+    }
+  }
+  .table {
+    &__body__heading {
+      padding-left: 1rem;
+      padding-right: 3rem;
+    }
+    &__body__data {
+      padding-left: 1rem;
+      padding-right: 3rem;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    width: 100%;
+  }
+  .form-container {
+    &--title {
+      padding: 0 1rem;
+    }
+  }
+  .form {
+    padding: 1rem;
+  }
+  .table-container {
+    width: fit-content;
+    margin: 0 1rem;
+  }
+  .table {
+    &__body__heading {
+      padding: 0 1rem;
+    }
+    &__body__data {
+      padding: 0 1rem;
     }
   }
 }

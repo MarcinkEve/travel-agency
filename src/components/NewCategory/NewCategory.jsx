@@ -156,7 +156,7 @@ const NewCategory = () => {
           </tbody>
         </table>
         {/* ) : ( */}
-        <div>No categories created</div>
+        {/* <div>No categories created</div> */}
         {/* )} */}
       </div>
     </div>
