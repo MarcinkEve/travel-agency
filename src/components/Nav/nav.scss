@@ -133,11 +133,11 @@
 @media screen and (max-width: 1024px) {
   .nav-container {
     display: none;
-    // width:0%;
+    height: fit-content;
     z-index: 999;
-
   }
   .nav-container-expanded {
+    height: fit-content;
     display: block;
     z-index: 999;
   }
