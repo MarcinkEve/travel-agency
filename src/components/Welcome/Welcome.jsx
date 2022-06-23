@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import "./welcome.scss";
 
 const Welcome = () => {
   return (
-    <div>Welcome</div>
-  )
-}
+    <>
+      <h1 className="welcome">Happy to see you here! </h1>
+    </>
+  );
+};
 
-export default Welcome
+export default Welcome;
