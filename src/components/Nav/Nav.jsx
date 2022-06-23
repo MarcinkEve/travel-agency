@@ -2,7 +2,7 @@ import React from "react";
 import "./nav.scss";
 import { Link } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
-import { categItems } from "../categItems.js";
+import { categItems } from "../../utils/categItems";
 import Categories from "../Categories/Categories";
 
 const Nav = ({ isNavExpanded, setIsNavExpanded }) => {
