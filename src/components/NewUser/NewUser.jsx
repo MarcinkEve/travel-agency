@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "./newUser.css";
 import Modal from "../Modal/Modal";
-import { getFromLocal } from "../../utils/utils";
+import { getFromLocal, setFromLocal } from "../../utils/utils";
 
 const GENDER = ["Female", "Male", "Other"];
 const DIRECTION = ["Italy", "Spain", "Greece", "Turkey"];
@@ -14,7 +14,7 @@ const DURATION = ["5d/4n", "8d/7n", "12d/11n"];
 const NewUser = () => {
   // const [valuesList, setValuesList] = useState([]);
 
-  const [error, setError] = useState({});
+  // const [error, setError] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
   const [values, setValues] = useState({
     firstName: "",
@@ -36,15 +36,15 @@ const NewUser = () => {
   };
 
   let arr = [];
-  const onSubmit = (event, data) => {
+  const onSubmit = (event) => {
     event.preventDefault();
-    setError(validation(values));
+    // setError(validation(values));
     setIsSubmit(true);
 
-    arr = getFromLocal("data", values);
+    arr = getFromLocal("data") || [];
     arr.push(values);
-    // arr.push(values);
-    localStorage.setItem("data", JSON.stringify(arr));
+    setFromLocal("data", arr);
+    // localStorage.setItem("data", JSON.stringify(arr));
     console.log(arr);
     event.target.reset();
     setValues("");
@@ -55,7 +55,8 @@ const NewUser = () => {
       console.log("val", values);
     }
   }, [isSubmit, values]);
-  ///////////////////////////////
+
+  //  =========== Prepare file for downloading ===========
   const handleSaveToPC = (jsonData) => {
     const fileData = JSON.stringify(jsonData);
     const blob = new Blob([fileData], { type: "text/plain" });
@@ -66,23 +67,21 @@ const NewUser = () => {
     link.click();
   };
 
-  //////////////////////////////
   //  =========== Show users list ===========
   const [usdata, setDataLS] = useState("");
 
   const getData = () => {
-    let data = JSON.parse(localStorage.getItem("data"));
+    let data = getFromLocal("data");
+    // let data = JSON.parse(localStorage.getItem("data"));
     console.log(data);
     setDataLS(JSON.stringify(data, null, 4));
   };
 
-  //////////////////////
   //  =========== Download list ===========
   const downloadData = () => {
     handleSaveToPC(JSON.parse(localStorage.getItem("data"), null, 4));
   };
 
-  //////////////////////
   //  =========== Show modal ===========
   const [insert, setInsert] = useState(0);
 
@@ -91,21 +90,19 @@ const NewUser = () => {
     getData();
   };
 
-  /////////////////////////
   //  =========== Inputs validation ===========
 
-  const validation = (val) => {
-    const errors = {};
-    if (!val.password) {
-      errors.password = "Please enter password!";
-    } else if (val.password.length < 7) {
-      errors.password = "Password must contain at least 7 characters!";
-    } else if (val.password.length > 25) {
-      errors.password = "Seems that password is too long";
-    }
-  };
+  // const validation = (val) => {
+  //   const errors = {};
+  //   if (!val.password) {
+  //     errors.password = "Please enter password!";
+  //   } else if (val.password.length < 7) {
+  //     errors.password = "Password must contain at least 7 characters!";
+  //   } else if (val.password.length > 25) {
+  //     errors.password = "Seems that password is too long";
+  //   }
+  // };
 
-  ///////////////////////////////////////////////////
   return (
     <>
       <div
