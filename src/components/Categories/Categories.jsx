@@ -13,11 +13,11 @@ const Categories = ({ menu, isNavExpanded, setIsNavExpanded }) => {
         setDropdown(false);
       }
     };
-    document.addEventListener("mousedown", handler);
+    document.addEventListener("mouseup", handler);
     document.addEventListener("touchstart", handler);
     return () => {
       // Cleanup the event listener
-      document.removeEventListener("mousedown", handler);
+      document.removeEventListener("mouseup", handler);
       document.removeEventListener("touchstart", handler);
     };
   }, [dropdown]);
@@ -43,7 +43,7 @@ const Categories = ({ menu, isNavExpanded, setIsNavExpanded }) => {
           />
         </>
       ) : (
-        <div href="/#">{menu.title}</div>
+        <Link to="/#">{menu.title}</Link>
       )}
     </div>
   );
