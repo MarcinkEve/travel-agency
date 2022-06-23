@@ -8,6 +8,7 @@ const CategoryInfo = ({ category = "direction", value = "Spain" }) => {
 
   const { search } = useLocation();
 
+  // skirta keisti query url
   const query = useMemo(
     () => Object.fromEntries(new URLSearchParams(search)),
     [search]
