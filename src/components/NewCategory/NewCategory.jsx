@@ -1,7 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import "./newCategory.scss";
-import { getFromLocal } from "../../utils/utils";
+import {
+  getFromLocal,
+  getFromLocalUnparsed,
+  setFromLocal,
+} from "../../utils/utils";
 
 const DIRECTION = ["Italy", "Spain", "Greece", "Turkey"];
 const TRANSPORT = ["Plain", "Bus", "Ship"];
@@ -33,7 +37,6 @@ const NewCategory = () => {
       duration: inputValue.duration,
     };
     const newdata = [...data, newCategory];
-    console.log("ND", newdata);
     setData(newdata);
 
     event.target.reset();
@@ -41,18 +44,22 @@ const NewCategory = () => {
   };
 
   useEffect(() => {
-    const data = localStorage.getItem("categ");
+    // const data = localStorage.getItem("categ");
+    const data = getFromLocalUnparsed("categ");
     if (data) {
-      setData(JSON.parse(data));
+      setData(getFromLocal("categ"));
     }
-    const categ = getFromLocal("categ");
-    if (categ.length > 0) {
-      setNotCreated(!notCreated);
-    }
+
+    // const categ = getFromLocal("categ");
+    // console.log(typeof categ)
+    // if (Object.keys(categ).length > 0) {
+    //   setNotCreated(!notCreated);
+    // }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("categ", JSON.stringify(data));
+    setFromLocal("categ", data);
+    // localStorage.setItem("categ", JSON.stringify(data));
   });
 
   return (
@@ -127,30 +134,30 @@ const NewCategory = () => {
       </div>
       <div className="table-container">
         <h2 className="table-container--title">Created categories</h2>
-        {notCreated ? (
-          <table className="table">
-            <thead>
-              <tr className="table__body">
-                <th className="table__body__heading">No</th>
-                <th className="table__body__heading">Direction</th>
-                <th className="table__body__heading">Transport</th>
-                <th className="table__body__heading">Duration</th>
+        {/* {notCreated ? ( */}
+        <table className="table">
+          <thead>
+            <tr className="table__body">
+              <th className="table__body__heading">No</th>
+              <th className="table__body__heading">Direction</th>
+              <th className="table__body__heading">Transport</th>
+              <th className="table__body__heading">Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((contact, i) => (
+              <tr key={i} className="table__body">
+                <td className="table__body__data">{++i}</td>
+                <td className="table__body__data">{contact.direction}</td>
+                <td className="table__body__data">{contact.transport}</td>
+                <td className="table__body__data">{contact.duration}</td>
               </tr>
-            </thead>
-            <tbody>
-              {data.map((contact, i) => (
-                <tr key={i} className="table__body">
-                  <td className="table__body__data">{++i}</td>
-                  <td className="table__body__data">{contact.direction}</td>
-                  <td className="table__body__data">{contact.transport}</td>
-                  <td className="table__body__data">{contact.duration}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        ) : (
-          <div>No categories created</div>
-        )}
+            ))}
+          </tbody>
+        </table>
+        {/* ) : ( */}
+        <div>No categories created</div>
+        {/* )} */}
       </div>
     </div>
   );
