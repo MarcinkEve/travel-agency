@@ -1,20 +1,57 @@
 [
   {
-    "firstName": "dfg",
-    "lastName": "edhj",
-    "email": "yuklyd",
-    "passw": "ufil",
-    "age": "3",
-    "gender": "Male",
-    "category": "By ship"
+      "firstName": "John",
+      "lastName": "Smith",
+      "email": "jshj@gmail.com",
+      "passw": "jhn",
+      "age": "28",
+      "gender": "Male",
+      "direction": "Italy",
+      "transport": "By plain",
+      "duration": "8d/7n"
   },
   {
-    "firstName": "dfg",
-    "lastName": "edhj",
-    "email": "yuklyd",
-    "passw": "ufil",
-    "age": "3",
-    "gender": "Male",
-    "category": "By ship"
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "email": "jane@gmail.com",
+      "passw": "jane",
+      "age": "15",
+      "gender": "Female",
+      "direction": "Spain",
+      "transport": "By plain",
+      "duration": "12d/11n"
+  },
+  {
+      "firstName": "Jonas",
+      "lastName": "Jonaitis",
+      "email": "jona@mail.com",
+      "passw": "jonas",
+      "age": "58",
+      "gender": "Male",
+      "direction": "Turkey",
+      "transport": "Ship",
+      "duration": "12d/11n"
+  },
+  {
+      "firstName": "Petras",
+      "lastName": "Petraitis",
+      "email": "petras@jsdk.mail",
+      "passw": "petras",
+      "age": "42",
+      "gender": "Male",
+      "direction": "Greece",
+      "transport": "Bus",
+      "duration": "8d/7n"
+  },
+  {
+      "firstName": "Melissa",
+      "lastName": "Smith",
+      "email": "melissa@gkdm.com",
+      "passw": "melisa",
+      "age": "25",
+      "gender": "Female",
+      "direction": "Italy",
+      "transport": "Plain",
+      "duration": "8d/7n"
   }
 ]
