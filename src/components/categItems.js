@@ -20,13 +20,13 @@ export const categItems = [
     title: "Transport",
     submenu: [
       {
-        title: "By plain",
+        title: "Plain",
       },
       {
-        title: "By bus",
+        title: "Bus",
       },
       {
-        title: "By ship",
+        title: "Ship",
       },
     ],
   },
