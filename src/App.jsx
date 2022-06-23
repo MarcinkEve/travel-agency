@@ -14,7 +14,7 @@ function App() {
       <div className="main-container">
         <Routes>
           <Route path="/" element={<Layout />}>
-            {/* <Route path="/welcome" element={<Welcome />} /> */}
+            <Route path="/" element={<Welcome />} />
             <Route path="/newUser" element={<NewUser />} />
             <Route path="/newCategory" element={<NewCategory />} />
             <Route path="/categories" element={<Categories />} />
