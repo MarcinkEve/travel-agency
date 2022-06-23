@@ -105,12 +105,7 @@ const NewUser = () => {
 
   return (
     <>
-      <div
-      // style={{
-      //   backgroundImage:
-      //     "url(https://part.lt/img/c48728a54a9bd63bd7936d3653c14a30779.jpg)",
-      // }}
-      >
+      <div>
         {insert ? (
           <Modal usdata={usdata} insert={insert} setInsert={setInsert}></Modal>
         ) : null}
@@ -151,7 +146,6 @@ const NewUser = () => {
                   required
                   className="user-form__input--field"
                 ></input>
-                {/* <p className="error-message">{error.firstName}</p> */}
               </div>
               <div className="user-form__input">
                 <label className="user-form__input--title">Last name</label>
@@ -163,7 +157,6 @@ const NewUser = () => {
                   required
                   className="user-form__input--field"
                 ></input>
-                {/* <p className="error-message">{error.firstName}</p> */}
               </div>
               <div className="user-form__input">
                 <label className="user-form__input--title">Your e-mail</label>
@@ -175,7 +168,6 @@ const NewUser = () => {
                   required
                   className="user-form__input--field"
                 ></input>
-                {/* <p className="error-message">{error.firstName}</p> */}
               </div>
               <div className="user-form__input">
                 <label className="user-form__input--title">Password</label>
@@ -187,7 +179,6 @@ const NewUser = () => {
                   required
                   className="user-form__input--field"
                 ></input>
-                {/* <p className="error-message">{error.passw}</p> */}
               </div>
               <div className="user-form__input">
                 <label className="user-form__input--title">Age</label>
@@ -200,7 +191,6 @@ const NewUser = () => {
                   min="0"
                   className="user-form__input--field"
                 ></input>
-                {/* <p className="error-message">{error.firstName}</p> */}
               </div>
             </div>
             <div className="user-form__side">
@@ -217,13 +207,6 @@ const NewUser = () => {
                     <option key={c}>{c}</option>
                   ))}
                 </select>
-                {/* <select value={gender} onChange={newGender}>
-              <option value="choose">Choose...</option>
-              <option value="female">Female</option>
-              <option value="male">Male</option>
-              <option value="other">Other</option>
-            </select> */}
-                {/* <p className="error-message">{error.firstName}</p> */}
               </div>
               <div className="user-form__input">
                 <label className="user-form__input--title">Direction</label>
@@ -238,14 +221,6 @@ const NewUser = () => {
                     <option key={c}>{c}</option>
                   ))}
                 </select>
-
-                {/* <select value={direction} onChange={newdirection}>
-              <option value="direction">Choose...</option>
-              <option value="plain">By plain</option>
-              <option value="bus">By bus</option>
-              <option value="ship">By ship</option>
-            </select> */}
-                {/* <p className="error-message">{error.firstName}</p> */}
               </div>
 
               <div className="user-form__input">
@@ -261,7 +236,6 @@ const NewUser = () => {
                     <option key={c}>{c}</option>
                   ))}
                 </select>
-                {/* <p className="error-message">{error.firstName}</p> */}
               </div>
 
               <div className="user-form__input">
@@ -277,10 +251,11 @@ const NewUser = () => {
                     <option key={c}>{c}</option>
                   ))}
                 </select>
-                {/* <p className="error-message">{error.firstName}</p> */}
               </div>
 
-              <button type="submit" className="user-form__submitButton">Add user</button>
+              <button type="submit" className="user-form__submitButton">
+                Add user
+              </button>
             </div>
           </form>
         </div>
