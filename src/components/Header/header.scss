@@ -26,7 +26,6 @@
   }
   &__title {
     background-size: cover;
-    // background-color: $bg-color-1;
     padding: 1rem 3rem;
     font-family: $fontPermanentMarker;
     font-size: 3.5rem;
@@ -59,7 +58,6 @@
         width: 5rem;
         padding-bottom: 0.5rem;
         fill: $color-5;
-        // margin: 0.5rem 0 0 1rem;
       }
       &--hamburger:active {
         fill: rgb(132, 219, 255);
@@ -86,7 +84,6 @@
         width: 5rem;
         padding-bottom: 0.5rem;
         fill: $color-5;
-        // margin: 0.5rem 0 0 1rem;
       }
       &--hamburger:active {
         fill: rgb(132, 219, 255);

@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "./header.scss";
 import { Link } from "react-router-dom";
 
-const Header = ({isNavExpanded, setIsNavExpanded}) => {
-
+const Header = ({ isNavExpanded, setIsNavExpanded }) => {
   return (
     <>
       <div className="header">
@@ -13,20 +12,14 @@ const Header = ({isNavExpanded, setIsNavExpanded}) => {
               <use xlinkHref="#logo"></use>
             </svg>
           </Link>
-            <svg className="header__logo--hamburger" onClick={() => {
-              setIsNavExpanded(!isNavExpanded);
-              // console.log("labas")
-            }}>
-              <use xlinkHref="#hamburger"></use>
-            </svg>
-          {/* <button
+          <svg
             className="header__logo--hamburger"
             onClick={() => {
               setIsNavExpanded(!isNavExpanded);
             }}
           >
-            MENU
-          </button> */}
+            <use xlinkHref="#hamburger"></use>
+          </svg>
         </div>
         <p className="header__title"> Travellers</p>
       </div>
