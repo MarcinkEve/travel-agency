@@ -30,7 +30,6 @@ const NewUser = () => {
     };
   };
 
-  let arr = [];
   const onSubmit = (event) => {
     event.preventDefault();
     setIsSubmit(true);
@@ -47,10 +46,6 @@ const NewUser = () => {
     };
     const newdata = [...data, newUser];
     setData(newdata);
-
-    
-    // arr = getFromLocal("data", newdata) || [];
-    // arr.push(newdata);
     setToLocal("data", newdata);
 
     event.target.reset();
