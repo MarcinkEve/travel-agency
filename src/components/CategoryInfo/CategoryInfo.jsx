@@ -16,7 +16,7 @@ const TABLEHEADING = [
   "Duration",
 ];
 
-const CategoryInfo = ({ category = "direction", value = "Spain" }) => {
+const CategoryInfo = () => {
   const [item, setItem] = useState([]);
 
   const { search } = useLocation();
@@ -33,11 +33,9 @@ const CategoryInfo = ({ category = "direction", value = "Spain" }) => {
         const filtering = items.filter((el, i) => {
           const key = Object.keys(query)[0];
           const prop = query[key];
-          // console.log("val", value[prop]);
-          // console.log("el", el[key?.toLowerCase()]);
+
           return el[key?.toLowerCase()] === prop;
         });
-        // console.log(filtering.length);
         setItem(filtering);
       }
     }

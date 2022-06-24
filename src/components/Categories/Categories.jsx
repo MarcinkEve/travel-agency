@@ -16,7 +16,6 @@ const Categories = ({ menu, isNavExpanded, setIsNavExpanded }) => {
     document.addEventListener("mouseup", handler);
     document.addEventListener("touchstart", handler);
     return () => {
-      // Cleanup the event listener
       document.removeEventListener("mouseup", handler);
       document.removeEventListener("touchstart", handler);
     };
