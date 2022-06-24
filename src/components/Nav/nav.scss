@@ -48,12 +48,12 @@
   list-style: none;
 }
 
-.menu-items {
+.category-items {
   position: relative;
   font-size: 20px;
 }
 
-.menu-items a {
+.category-items a {
   display: block;
   font-size: inherit;
   color: inherit;
@@ -62,7 +62,7 @@
   color: $color-1;
   font-family: $fontKalam;
 }
-.menu-items button {
+.category-items button {
   color: inherit;
   font-size: inherit;
   border: none;
@@ -75,8 +75,8 @@
   color: $color-1;
   font-weight: bold;
 }
-.menu-items a:hover,
-.menu-items button:hover {
+.category-items a:hover,
+.category-items button:hover {
   background-color: $color-4;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   border-radius: 0.5rem;
@@ -85,7 +85,7 @@
   margin: 0 1rem;
   width: calc(100% - 2rem);
 }
-.menu-items a:hover {
+.category-items a:hover {
   width: calc(100% - 8rem);
 }
 
@@ -122,7 +122,7 @@
   margin: 0;
 }
 
-.dropdown .dropdown-submenu {
+.dropdown .dropdown-subCategory {
   position: absolute;
   left: 100%;
   top: -7px;
@@ -158,18 +158,18 @@
     padding: 0 2.5rem;
   }
 
-  .menu-items a,
-  .menu-items button {
+  .category-items a,
+  .category-items button {
     padding: 0.5rem 0 0.5rem 4rem;
     margin: 0 0.5rem;
   }
-  .menu-items a:hover {
+  .category-items a:hover {
     padding: 0.5rem 4.5rem;
     margin: auto;
     width: fit-content;
     transition: all 1s;
   }
-  .menu-items button:hover {
+  .category-items button:hover {
     padding: 0.5rem 0;
     margin: 0 1rem;
     width: calc(100% - 2rem);
@@ -191,7 +191,7 @@
     padding: 0.2rem;
     font-size: 20px;
   }
-  .menu-items a:hover {
+  .category-items a:hover {
     width: fit-content;
     transition: all 1s;
   }

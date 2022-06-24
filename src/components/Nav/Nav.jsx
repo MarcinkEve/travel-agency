@@ -51,7 +51,7 @@ const Nav = ({ isNavExpanded, setIsNavExpanded }) => {
           Categories list
         </li>
         <li className={`dropdown ${drop ? "show" : ""}`} ref={ref}>
-          {categItems.map((menu, i) => {
+          {categItems.map((category, i) => {
             return (
               <Link to="/categoryInfo" key={i}>
                 {" "}
@@ -59,7 +59,7 @@ const Nav = ({ isNavExpanded, setIsNavExpanded }) => {
                   categItems={categItems}
                   isNavExpanded={isNavExpanded}
                   setIsNavExpanded={setIsNavExpanded}
-                  menu={menu}
+                  category={category}
                   key={i}
                 />
               </Link>
