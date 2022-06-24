@@ -7,12 +7,11 @@ import {
   setFromLocal,
 } from "../../utils/utils";
 
-const DIRECTION = ["Italy", "Spain", "Greece", "Turkey"];
-const TRANSPORT = ["Plain", "Bus", "Ship"];
-const DURATION = ["5d/4n", "8d/7n", "12d/11n"];
+const travelDirection = ["Italy", "Spain", "Greece", "Turkey"];
+const travelTransport = ["Plain", "Bus", "Ship"];
+const travelDuration = ["5d/4n", "8d/7n", "12d/11n"];
 
 const NewCategory = () => {
-  const [notCreated, setNotCreated] = useState(false);
   const [data, setData] = useState([]);
   const [inputValue, setInputValue] = useState({
     direction: "",
@@ -44,22 +43,14 @@ const NewCategory = () => {
   };
 
   useEffect(() => {
-    // const data = localStorage.getItem("categ");
     const data = getFromLocalUnparsed("categ");
     if (data) {
       setData(getFromLocal("categ"));
     }
-
-    // const categ = getFromLocal("categ");
-    // console.log(typeof categ)
-    // if (Object.keys(categ).length > 0) {
-    //   setNotCreated(!notCreated);
-    // }
   }, []);
 
   useEffect(() => {
     setFromLocal("categ", data);
-    // localStorage.setItem("categ", JSON.stringify(data));
   });
 
   return (
@@ -76,10 +67,10 @@ const NewCategory = () => {
                 className="form__content__input--select"
               >
                 <option value="Choose">Choose...</option>
-                <option value={DIRECTION[0]}>{DIRECTION[0]}</option>
-                <option value={DIRECTION[1]}>{DIRECTION[1]}</option>
-                <option value={DIRECTION[2]}>{DIRECTION[2]}</option>
-                <option value={DIRECTION[3]}>{DIRECTION[3]}</option>
+                <option value={travelDirection[0]}>{travelDirection[0]}</option>
+                <option value={travelDirection[1]}>{travelDirection[1]}</option>
+                <option value={travelDirection[2]}>{travelDirection[2]}</option>
+                <option value={travelDirection[3]}>{travelDirection[3]}</option>
               </select>
             </div>
 
@@ -91,9 +82,9 @@ const NewCategory = () => {
                 className="form__content__input--select"
               >
                 <option value="Choose">Choose...</option>
-                <option value={TRANSPORT[0]}>{TRANSPORT[0]}</option>
-                <option value={TRANSPORT[1]}>{TRANSPORT[1]}</option>
-                <option value={TRANSPORT[2]}>{TRANSPORT[2]}</option>
+                <option value={travelTransport[0]}>{travelTransport[0]}</option>
+                <option value={travelTransport[1]}>{travelTransport[1]}</option>
+                <option value={travelTransport[2]}>{travelTransport[2]}</option>
               </select>
             </div>
 
@@ -105,9 +96,9 @@ const NewCategory = () => {
                 className="form__content__input--select"
               >
                 <option value="Choose">Choose...</option>
-                <option value={DURATION[0]}>{DURATION[0]}</option>
-                <option value={DURATION[1]}>{DURATION[1]}</option>
-                <option value={DURATION[2]}>{DURATION[2]}</option>
+                <option value={travelDuration[0]}>{travelDuration[0]}</option>
+                <option value={travelDuration[1]}>{travelDuration[1]}</option>
+                <option value={travelDuration[2]}>{travelDuration[2]}</option>
               </select>
             </div>
           </div>
@@ -115,26 +106,9 @@ const NewCategory = () => {
             Create
           </button>
         </form>
-        {/* <div>
-          <div>
-            <label>
-              <h3>Filter</h3>
-            </label>
-          </div>
-          <div>
-            <input
-              type="text"
-              placeholder="Search..."
-              onChange={(e) => {
-                setSearchItem(e.target.value);
-              }}
-            />
-          </div>
-        </div> */}
       </div>
       <div className="table-container">
         <h2 className="table-container--title">Created categories</h2>
-        {/* {notCreated ? ( */}
         <table className="table">
           <thead>
             <tr className="table__body">
@@ -155,9 +129,6 @@ const NewCategory = () => {
             ))}
           </tbody>
         </table>
-        {/* ) : ( */}
-        {/* <div>No categories created</div> */}
-        {/* )} */}
       </div>
     </div>
   );
