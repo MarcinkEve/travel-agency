@@ -119,9 +119,6 @@
   width: 15rem;
   display: block;
   margin: 0;
-
-  // position:relative;
-  // left: 1rem;
 }
 
 .dropdown .dropdown-submenu {
@@ -133,8 +130,6 @@
 @media screen and (max-width: 1024px) {
   .nav-container {
     display: none;
-    height: fit-content;
-    z-index: 999;
   }
   .nav-container-expanded {
     height: fit-content;
@@ -146,7 +141,7 @@
 @media screen and (max-width: 992px) {
   .nav-container {
     display: none;
-    // width:0%;
+    padding: 1rem 1rem 1rem 2rem;
   }
   .nav-container-expanded {
     display: block;
