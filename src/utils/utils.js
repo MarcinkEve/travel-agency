@@ -8,7 +8,7 @@ export function getFromLocal(key, defaultValue = []) {
 
 export function getFromLocalUnparsed(key, defaultValue = []) {
   try {
-    return localStorage.getItem("categ") || defaultValue;
+    return localStorage.getItem(key) || defaultValue;
   } catch {
     return defaultValue;
   }
