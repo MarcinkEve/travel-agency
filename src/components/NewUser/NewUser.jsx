@@ -48,8 +48,8 @@ const NewUser = () => {
     const newdata = [...data, newUser];
     setData(newdata);
 
-    arr = getFromLocal("data", newdata) || [];
-    arr.push(newdata);
+    // arr = getFromLocal("data", newdata) || [];
+    // arr.push(newdata);
     setToLocal("data", newdata);
 
     event.target.reset();
@@ -64,7 +64,6 @@ const NewUser = () => {
       transport: "",
       duration: "",
     });
-    console.log("click");
   };
 
   useEffect(() => {
@@ -73,6 +72,11 @@ const NewUser = () => {
       setData(getFromLocal("data"));
     }
   }, []);
+
+  useEffect(() => {
+    setToLocal("data", data);
+  });
+
 
   const handleSaveToPC = (jsonData) => {
     const fileData = JSON.stringify(jsonData);
