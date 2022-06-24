@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { getFromLocal } from "../../utils/utils";
 import "./categoryInfo.scss";
 
-const TABLEHEADING = [
+const tableHeading = [
   "No",
   "First Name",
   "Last name",
@@ -49,7 +49,7 @@ const CategoryInfo = () => {
         <table className="categoryInfo__table">
           <thead>
             <tr className="categoryInfo__table__body">
-              {TABLEHEADING.map((c) => (
+              {tableHeading.map((c) => (
                 <th key={c} className="categoryInfo__table__body__heading">
                   {c}
                 </th>
