@@ -1,5 +1,5 @@
 import React from "react";
-import Data from "../Data/Data";
+import Data from "../Data";
 import "./modal.scss";
 
 const Modal = ({ usdata, setInsert }) => {

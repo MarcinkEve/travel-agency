@@ -1,5 +1,4 @@
-import React, { useMemo } from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useLocation } from "react-router-dom";
 import { getFromLocal } from "../../utils/utils";
 import "./categoryInfo.scss";

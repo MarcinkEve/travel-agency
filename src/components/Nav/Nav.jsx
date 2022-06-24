@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./nav.scss";
 import { Link } from "react-router-dom";
-import { useState, useRef, useEffect } from "react";
-import { categItems } from "../../utils/categItems";
-import Categories from "../Categories/Categories";
+import { categItems } from "../../data/categItems";
+import Categories from "../Categories";
 
 const Nav = ({ isNavExpanded, setIsNavExpanded }) => {
   const [drop, setDrop] = useState(false);

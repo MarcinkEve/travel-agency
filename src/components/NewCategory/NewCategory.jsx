@@ -1,10 +1,9 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./newCategory.scss";
 import {
   getFromLocal,
   getFromLocalUnparsed,
-  setFromLocal,
+  setToLocal,
 } from "../../utils/utils";
 
 const travelDirection = ["Italy", "Spain", "Greece", "Turkey"];
@@ -39,7 +38,6 @@ const NewCategory = () => {
     setData(newdata);
 
     event.target.reset();
-    console.log("newCategory", newCategory);
   };
 
   useEffect(() => {
@@ -50,7 +48,7 @@ const NewCategory = () => {
   }, []);
 
   useEffect(() => {
-    setFromLocal("categ", data);
+    setToLocal("categ", data);
   });
 
   return (

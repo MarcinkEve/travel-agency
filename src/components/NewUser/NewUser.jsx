@@ -1,8 +1,7 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./newUser.scss";
-import Modal from "../Modal/Modal";
-import { getFromLocal, setFromLocal } from "../../utils/utils";
+import Modal from "../Modal";
+import { getFromLocal, setToLocal } from "../../utils/utils";
 
 const userGender = ["Female", "Male", "Other"];
 const travelDirection = ["Italy", "Spain", "Greece", "Turkey"];
@@ -36,15 +35,13 @@ const NewUser = () => {
 
     arr = getFromLocal("data") || [];
     arr.push(values);
-    setFromLocal("data", arr);
-    console.log(arr);
+    setToLocal("data", arr);
     event.target.reset();
     setValues("");
   };
 
   useEffect(() => {
     if (isSubmit) {
-      console.log("val", values);
     }
   }, [isSubmit, values]);
 
@@ -62,7 +59,6 @@ const NewUser = () => {
 
   const getData = () => {
     let data = getFromLocal("data");
-    console.log(data);
     setDataLS(JSON.stringify(data, null, 4));
   };
 
