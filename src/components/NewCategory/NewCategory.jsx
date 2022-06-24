@@ -61,7 +61,7 @@ const NewCategory = () => {
               <label className="form__content__input--label">Direction</label>
               <select
                 name="direction"
-                onClick={inputChange}
+                onChange={inputChange}
                 className="form__content__input--select"
               >
                 <option value="Choose">Choose...</option>
@@ -76,7 +76,7 @@ const NewCategory = () => {
               <label className="form__content__input--label">Transport</label>
               <select
                 name="transport"
-                onClick={inputChange}
+                onChange={inputChange}
                 className="form__content__input--select"
               >
                 <option value="Choose">Choose...</option>
@@ -90,7 +90,7 @@ const NewCategory = () => {
               <label className="form__content__input--label">Duration</label>
               <select
                 name="duration"
-                onClick={inputChange}
+                onChange={inputChange}
                 className="form__content__input--select"
               >
                 <option value="Choose">Choose...</option>
