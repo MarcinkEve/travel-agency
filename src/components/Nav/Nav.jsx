@@ -19,7 +19,6 @@ const Nav = ({ isNavExpanded, setIsNavExpanded }) => {
     document.addEventListener("mousedown", handler);
     document.addEventListener("touchstart", handler);
     return () => {
-      // Cleanup the event listener
       document.removeEventListener("mousedown", handler);
       document.removeEventListener("touchstart", handler);
     };
@@ -28,11 +27,6 @@ const Nav = ({ isNavExpanded, setIsNavExpanded }) => {
   return (
     <div className={isNavExpanded ? "nav-container-expanded" : "nav-container"}>
       <ul className="nav__ul">
-        {/* <li>
-          <Link to="/welcome">
-            <p>Home</p>
-          </Link>
-        </li> */}
         <li
           className="nav__ul__li"
           onClick={() => {
