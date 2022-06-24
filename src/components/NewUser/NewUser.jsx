@@ -60,7 +60,7 @@ const NewUser = () => {
     const blob = new Blob([fileData], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
-    link.download = "filename.txt";
+    link.download = "data.txt";
     link.href = url;
     link.click();
   };
