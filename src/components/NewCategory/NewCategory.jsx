@@ -34,8 +34,8 @@ const NewCategory = () => {
       transport: inputValue.transport,
       duration: inputValue.duration,
     };
-    const newdata = [...data, newCategory];
-    setData(newdata);
+    const newData = [...data, newCategory];
+    setData(newData);
 
     event.target.reset();
   };
