@@ -26,6 +26,7 @@
       font-size: 20px;
       padding: 0.5rem 1rem;
       margin: 0 1rem;
+      cursor: pointer;
     }
     &-button:hover {
       background-color: $color-3;
@@ -67,6 +68,7 @@
     border-radius: 5px;
     font-size: 25px;
     margin: 3rem 2rem 0 0;
+    cursor: pointer;
   }
   &__submitButton:hover {
     background-color: $color-3;
