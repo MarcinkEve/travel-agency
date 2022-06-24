@@ -1,6 +1,17 @@
 @import "../../assets/variables.scss";
 
 .welcome {
-  margin: 8rem 10rem;
+  margin: 8rem auto;
   height: 20%;
+  width: fit-content;
+  font-family: $fontKalam;
+
+}
+
+@media screen and (max-width: 576px) {
+  .welcome {
+    text-align: center;
+    width: fit-content;
+    margin: 13rem 2rem;
+  }
 }

@@ -4,7 +4,9 @@ import "./welcome.scss";
 const Welcome = () => {
   return (
     <>
-      <h1 className="welcome">Happy to see you here! </h1>
+      <div className="welcome">
+        <h1>Happy to see you here! </h1>
+      </div>
     </>
   );
 };
