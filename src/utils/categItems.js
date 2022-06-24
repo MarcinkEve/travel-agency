@@ -1,7 +1,7 @@
 export const categItems = [
   {
     title: "Direction",
-    submenu: [
+    subCategory: [
       {
         title: "Italy",
       },
@@ -18,7 +18,7 @@ export const categItems = [
   },
   {
     title: "Transport",
-    submenu: [
+    subCategory: [
       {
         title: "Plain",
       },
@@ -32,7 +32,7 @@ export const categItems = [
   },
   {
     title: "Duration",
-    submenu: [
+    subCategory: [
       {
         title: "5d/4n",
       },
