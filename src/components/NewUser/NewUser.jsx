@@ -48,6 +48,7 @@ const NewUser = () => {
     const newdata = [...data, newUser];
     setData(newdata);
 
+    
     // arr = getFromLocal("data", newdata) || [];
     // arr.push(newdata);
     setToLocal("data", newdata);
