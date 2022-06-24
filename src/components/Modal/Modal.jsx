@@ -2,7 +2,7 @@ import React from "react";
 import Data from "../Data";
 import "./modal.scss";
 
-const Modal = ({ usdata, setInsert }) => {
+const Modal = ({ dataLS, setInsert }) => {
   return (
     <>
       <div className="modal">
@@ -18,7 +18,7 @@ const Modal = ({ usdata, setInsert }) => {
           </button>
         </div>
         <div className="modal__data">
-          <Data usdata={usdata}></Data>
+          <Data dataLS={dataLS}></Data>
         </div>
       </div>
     </>
