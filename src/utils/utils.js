@@ -14,7 +14,7 @@ export function getFromLocalUnparsed(key, defaultValue = []) {
   }
 }
 
-export function setFromLocal(key, dataArray, defaultValue = []) {
+export function setToLocal(key, dataArray, defaultValue = []) {
   try {
     return localStorage.setItem(key, JSON.stringify(dataArray)) || defaultValue;
   } catch {
