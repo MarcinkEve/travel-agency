@@ -39,7 +39,7 @@ const CategoryInfo = () => {
         setItem(filtering);
       }
     }
-  }, [JSON.stringify(query)]);
+  }, [query]);
 
   return (
     <>

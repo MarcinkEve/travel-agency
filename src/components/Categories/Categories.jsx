@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Dropdown from "../Dropdown/Dropdown";
 
-const Categories = ({ menu, isNavExpanded, setIsNavExpanded }) => {
+const Categories = ({ category, isNavExpanded, setIsNavExpanded }) => {
   const [dropdown, setDropdown] = useState(false);
   let ref = useRef();
 
@@ -22,8 +22,8 @@ const Categories = ({ menu, isNavExpanded, setIsNavExpanded }) => {
   }, [dropdown]);
 
   return (
-    <div className="menu-items" ref={ref}>
-      {menu.submenu ? (
+    <div className="category-items" ref={ref}>
+      {category.subCategory ? (
         <>
           <button
             type="button"
@@ -31,18 +31,18 @@ const Categories = ({ menu, isNavExpanded, setIsNavExpanded }) => {
             aria-expanded={dropdown ? "true" : "false"}
             onClick={() => setDropdown((prev) => !prev)}
           >
-            {menu.title}{" "}
+            {category.title}{" "}
           </button>
           <Dropdown
-            category={menu.title}
-            submenus={menu.submenu}
+            category={category.title}
+            subCategories={category.subCategory}
             dropdown={dropdown}
             isNavExpanded={isNavExpanded}
             setIsNavExpanded={setIsNavExpanded}
           />
         </>
       ) : (
-        <Link to="/#">{menu.title}</Link>
+        <Link to="/#">{category.title}</Link>
       )}
     </div>
   );
