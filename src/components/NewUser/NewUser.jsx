@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./newUser.scss";
 import Modal from "../Modal";
-import { getFromLocal, setToLocal } from "../../utils/utils";
+import { getFromLocal, setToLocal, getFromLocalUnparsed } from "../../utils/utils";
 
 const userGender = ["Female", "Male", "Other"];
 const travelDirection = ["Italy", "Spain", "Greece", "Turkey"];
@@ -9,6 +9,8 @@ const travelTransport = ["Plain", "Bus", "Ship"];
 const travelDuration = ["5d/4n", "8d/7n", "12d/11n"];
 
 const NewUser = () => {
+  const [data, setData] = useState([]);
+
   const [isSubmit, setIsSubmit] = useState(false);
   const [values, setValues] = useState({
     firstName: "",
@@ -32,10 +34,24 @@ const NewUser = () => {
   const onSubmit = (event) => {
     event.preventDefault();
     setIsSubmit(true);
+    const newUser = {
+      firstName: values.firstName,
+      lastName: values.lastName,
+      email: values.email,
+      passw: values.passw,
+      age: values.age,
+      gender: values.gender,
+      direction: values.direction,
+      transport: values.transport,
+      duration: values.duration,
+    };
+    const newdata = [...data, newUser];
+    setData(newdata);
 
-    arr = getFromLocal("data", values) || [];
-    arr.push(values);
-    setToLocal("data", arr);
+    arr = getFromLocal("data", newdata) || [];
+    arr.push(newdata);
+    setToLocal("data", newdata);
+
     event.target.reset();
     setValues({
       firstName: "",
@@ -48,19 +64,22 @@ const NewUser = () => {
       transport: "",
       duration: "",
     });
+    console.log("click");
   };
 
   useEffect(() => {
-    if (isSubmit) {
+    const data = getFromLocalUnparsed("data");
+    if (data) {
+      setData(getFromLocal("data"));
     }
-  }, [isSubmit, values]);
+  }, []);
 
   const handleSaveToPC = (jsonData) => {
     const fileData = JSON.stringify(jsonData);
     const blob = new Blob([fileData], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
-    link.download = "data.txt";
+    link.download = "usersData.txt";
     link.href = url;
     link.click();
   };
