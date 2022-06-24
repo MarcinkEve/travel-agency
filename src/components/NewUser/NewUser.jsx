@@ -33,11 +33,21 @@ const NewUser = () => {
     event.preventDefault();
     setIsSubmit(true);
 
-    arr = getFromLocal("data") || [];
+    arr = getFromLocal("data", values) || [];
     arr.push(values);
     setToLocal("data", arr);
     event.target.reset();
-    setValues("");
+    setValues({
+      firstName: "",
+      lastName: "",
+      email: "",
+      passw: "",
+      age: "",
+      gender: "",
+      direction: "",
+      transport: "",
+      duration: "",
+    });
   };
 
   useEffect(() => {
@@ -55,7 +65,7 @@ const NewUser = () => {
     link.click();
   };
 
-  const [usdata, setDataLS] = useState("");
+  const [dataLS, setDataLS] = useState("");
 
   const getData = () => {
     let data = getFromLocal("data");
@@ -77,7 +87,7 @@ const NewUser = () => {
     <>
       <div>
         {insert ? (
-          <Modal usdata={usdata} insert={insert} setInsert={setInsert}></Modal>
+          <Modal dataLS={dataLS} insert={insert} setInsert={setInsert}></Modal>
         ) : null}
       </div>
       <div className="user-container">
