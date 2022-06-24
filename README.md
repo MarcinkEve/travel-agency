@@ -29,7 +29,7 @@ To run this app it is necessary to instal npm package and few dependencies.
 App runs on it's own server at http://localhost:3000
 
 
-Live demo: travel-agency-a1jj5e7l0-marcinkeve.vercel.app
+Live demo: https://travel-agency-travellers.vercel.app/
 
 
 
